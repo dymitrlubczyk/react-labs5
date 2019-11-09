@@ -39,10 +39,10 @@ class GameAdmin extends React.Component {
        return ( 
            <>
            <Player playerNr='1' playerName={this.state.user1Name} 
-           changePlayer={this.changePlayer} label={this.state.user1Label}/>
+           changePlayer={this.changePlayer} label={this.state.user1Label} played='1'/>
            
            <Player playerNr='2' playerName={this.state.user2Name} 
-           changePlayer={this.changePlayer} label={this.state.user2Label}/>
+           changePlayer={this.changePlayer} label={this.state.user2Label} played='0'/>
            
                 <input
                     type='text'

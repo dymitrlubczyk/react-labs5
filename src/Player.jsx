@@ -6,7 +6,7 @@ class Player extends React.Component {
         super(props);
         this.state={
             playerNr: props.playerNr,
-            played: 0,
+            played: parseInt(props.played)
         };
 
     }
@@ -14,8 +14,10 @@ class Player extends React.Component {
     clickHandler=()=>{
 
         this.props.changePlayer(this.state.playerNr);
+        this.setState({played:this.state.played+1});
+
     }
-    
+
     render(){
         return(
             <div>
