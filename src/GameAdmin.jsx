@@ -13,11 +13,13 @@ class GameAdmin extends React.Component {
         }
     }
 
+
+
     render() {
        return ( 
            <>
-           <Player playerNr='1'/>
-           <Player playerNr='2'/>
+           <Player playerNr='1' playerName={this.state.user1Name}/>
+           <Player playerNr='2' playerName={this.state.user2Name}/>
            
                 <input
                     type='text'
@@ -27,8 +29,9 @@ class GameAdmin extends React.Component {
                 <input
                     type='text'
                     value={this.state.user2Name}
-                    onChange={e => this.setState({ user2Name: e.target.value })}
+                    onChange={e => this.setState({ user2Name: e.target.value })}    
                 />
+                
            </>
         )
     }
