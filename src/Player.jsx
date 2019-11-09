@@ -5,29 +5,30 @@ class Player extends React.Component {
     constructor(props){
         super(props);
         this.state={
-            playerNr: props.playerNr,
-            played: parseInt(props.played)
+            playerId: props.playerId,
         };
 
     }
 
     clickHandler=()=>{
 
-        this.props.changePlayer(this.state.playerNr);
-        this.setState({played:this.state.played+1});
-
+        this.props.increaseScore(this.state.playerId)
+        this.props.changePlayer(this.state.playerId)
     }
 
     render(){
         return(
+        <div>
+            <div>Player{this.state.playerId}</div>
+            
+            <div>Name:{this.props.playerName}</div>
+            
             <div>
-        <div>Player{this.state.playerNr}</div>
-        
-        <div>Name {this.props.playerName}</div>
-        
-        <div>Played number of times: {this.state.played}
-        <button onClick={this.clickHandler} disabled={!this.label=='play'}>{this.props.label}</button>
-        </div>
+                Games played: {this.props.score}
+                <button onClick={this.clickHandler} disabled={this.props.isActive}>
+                    {this.props.isActive ? 'this user is playing' : 'play'}
+                </button>
+            </div>
         </div>)
         
     }
